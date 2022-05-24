@@ -1,0 +1,51 @@
+﻿@model Item
+
+@{
+    ViewData["Title"] = "Items Details";
+}
+
+<div class="row">
+        <div class="col-md-8 offset-2">
+            <div class="card mb-12">
+                <div class="row g-0">
+                    <div class="col-md-12">
+                        <div class="card-header text-white bg-info">
+                            <p class="card-text">
+                                <h5 class="card-title">
+                                    @Model.FullName
+                                    <a class="text-white float-right"><i class="bi bi-pencil-square"></i></a>
+                                </h5>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="@Model.ImageURL" width="100%" alt="@Model.FullName">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <p class="card-text"><a>Dascription: </a>@Model.Description</p>
+                            <p class="card-text"><b>Type: </b>@Model.Type</p>
+                            <p class="card-text"><c>Price:$</c>@Model.Price</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="card-footer ">
+                            <p class="card-text">
+                                <a class="btn btn-outline-primary float-right" asp-action="Index">
+                                    <i class="bi bi-eye-fill"></i> Back to List
+                                </a>
+                                <a class="btn btn-success text-white" asp-controller="Order" asp-action="AddItemToShoppingCart" asp-route-id="@Model.Id">
+                                    <i class="bi bi-cart-plus"></i> Add to Cart
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+</div>
+
